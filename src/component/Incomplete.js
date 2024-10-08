@@ -61,6 +61,12 @@ export default function Incomplete() {
       <Link to="/Completed" className="btn btn-success mt-2 ms-5">
         View Complete Task
       </Link>
+      <Link to="/Important" className="btn btn-dark mt-2 ms-5">
+        Show Pending Important Task
+      </Link>
+      <Link to="/Allimp" className="btn btn-dark mt-2 ms-5">
+        Show All Important Task
+      </Link>
       <center>
         <h1 className="heading mt-3">ToDo List</h1>
       </center>

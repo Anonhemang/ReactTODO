@@ -7,6 +7,7 @@ import View from "./component/View";
 import Completed from "./component/Completed";
 import Incomplete from "./component/Incomplete";
 import Important from "./component/Important";
+import ImportantAll from "./component/ImportantAll";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/Index" element={<Index />} />
         <Route path="/" element={<AddCont />} />
         <Route path="/Important" element={<Important />} />
+        <Route path="/Allimp" element={<ImportantAll />} />
         <Route path="/Completed" element={<Completed />} />
         <Route path="/Incompleted" element={<Incomplete />} />
         <Route path="/Edit/:id" element={<Edit />} />
