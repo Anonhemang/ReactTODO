@@ -32,8 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = $data['title'];
     $description = $data['description'];
     $status = $data['status'];
+    $important = $data['important'];
 
-    $sql = "INSERT INTO `todolist` (`title`, `description`,`status`) VALUES ('$title', '$description', '$status')";
+    $sql = "INSERT INTO `todolist` (`title`, `description`,`status`, `important`) VALUES ('$title', '$description', '$status', '$important')";
     $result = mysqli_query($conn, $sql);
     if ($result) {
         echo json_encode(array("message" => "Data Inserted Successfully"));
@@ -49,8 +50,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
     $title = $data['title'];
     $description = $data['description'];
     $status = $data['status'];
+    $important = $data['important'];
 
-    $sql = "UPDATE `todolist` SET `title`='$title', `description`='$description', `status`='$status' WHERE `id`='$id'";
+    $sql = "UPDATE `todolist` SET `title`='$title', `description`='$description', `status`='$status', `important`='$important' WHERE `id`='$id'";
     $result = mysqli_query($conn, $sql);
     if ($result) {
         echo json_encode(array("message" => "Data Updated Successfully"));
