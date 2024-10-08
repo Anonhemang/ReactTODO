@@ -32,7 +32,36 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+table {
+  width: 95%;
+  margin: auto;
+}
+
+tr,
+th,
+td {
+  padding: 2%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+  border-top: 1px solid rgba(0, 0, 0, 0.6);
+  text-align: justify;
+}
+
+.heading {
+  color: burlywood;
+  font-weight: bolder;
+}
+
+.incompleted {
+  background-color: rgba(240, 128, 128, 0.7);
+  font-weight: bold;
+}
+
+.completed {
+  background-color: rgba(144, 238, 144, 0.7);
 }
