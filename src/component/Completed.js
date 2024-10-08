@@ -27,22 +27,7 @@ export default function Completed() {
       getList();
     }
   };
-  // ------ Edit ------//
-  // const editList = async () => {
-  //   try {
-  //     await axios.put("http://localhost/ReactTODO/api.php", {
-  //       id: list.id,
-  //       title,
-  //       description,
-  //     });
-  //     setDescription("");
-  //     setTitle("");
-  //     getList();
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
-  //-------------------------------------------//
+  
   const editPage = (nlist) => {
     navigate(`/Edit/${nlist.id}`, { state: { nlist } });
   };
