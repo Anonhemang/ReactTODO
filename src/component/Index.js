@@ -52,7 +52,7 @@ export default function Index() {
   };
   return (
     <div className="mt-5 mb-5">
-      <Link to="/" className="btn btn-dark ms-5">
+      <Link to="/" className="btn btn-dark mt-2 ms-5">
         Create New List
       </Link>
       <Link to="/Completed" className="btn btn-success mt-2 ms-5">
@@ -62,7 +62,7 @@ export default function Index() {
         View Incomplete Task
       </Link>
       <center>
-        <h1 className="heading">ToDo List</h1>
+        <h1 className="heading mt-3">ToDo List</h1>
       </center>
       <table className="tab ">
         <thead>

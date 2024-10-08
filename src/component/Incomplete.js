@@ -52,17 +52,17 @@ export default function Incomplete() {
   };
   return (
     <div className="mt-5 mb-5">
-      <Link to="/" className="btn btn-dark ms-5">
+      <Link to="/" className="btn btn-dark mt-2 ms-5">
         Create New List
       </Link>
-      <Link to="/Index" className="btn btn-success ms-5">
+      <Link to="/Index" className="btn btn-warning mt-2 ms-5">
         View All Task
       </Link>
       <Link to="/Completed" className="btn btn-success mt-2 ms-5">
         View Complete Task
       </Link>
       <center>
-        <h1 className="heading">ToDo List</h1>
+        <h1 className="heading mt-3">ToDo List</h1>
       </center>
       <table className="tab ">
         <thead>
@@ -75,10 +75,7 @@ export default function Incomplete() {
         </thead>
         <tbody>
           {list.map((nlist) =>
-            nlist.status === "Completed" ? (
-              ""
-            ) : (
-              //if Incompleted----------------------------------------------------
+            nlist.status === "Incomplete" ? (
               <tr className="incompleted" key={nlist.id}>
                 <td onClick={() => viewPage(nlist)} className="w-75">
                   {nlist.title}
@@ -109,6 +106,8 @@ export default function Incomplete() {
                   </button>
                 </td>
               </tr>
+            ) : (
+              ""
             )
           )}
         </tbody>

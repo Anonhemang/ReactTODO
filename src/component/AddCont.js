@@ -42,6 +42,8 @@ export default function AddCont() {
           setDescription(e.target.value);
         }}
       ></textarea>
+      {description.split(" ").length} Words, {description.length} Char
+      <br />
       <input type="hidden" value={status} />
       <button className="mt-2 btn btn-success" onClick={addList}>
         Add
@@ -56,7 +58,8 @@ export default function AddCont() {
         View All Lists
       </Link>
       <br />
-      {description.split(" ").length} Words, {description.length} Char
+      <br />
+      <br />
     </div>
   );
 }
