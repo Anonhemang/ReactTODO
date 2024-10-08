@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-export default function Index() {
+export default function Important() {
   const [list, setList] = useState([]);
 
   const navigate = useNavigate();
@@ -55,17 +55,14 @@ export default function Index() {
       <Link to="/" className="btn btn-dark mt-2 ms-5">
         Create New List
       </Link>
+      <Link to="/Index" className="btn btn-warning mt-2 ms-5">
+        View All Task
+      </Link>
       <Link to="/Completed" className="btn btn-success mt-2 ms-5">
-        View Completed Task
-      </Link>
-      <Link to="/Incompleted" className="btn btn-danger mt-2 ms-5">
-        View Incomplete Task
-      </Link>
-      <Link to="/Important" className="btn btn-dark mt-2 ms-5">
-       Show Important Only
+        View Complete Task
       </Link>
       <center>
-        <h1 className="heading mt-3">ToDo List</h1>
+        <h1 className="heading mt-3">ToDo List (Important Tasks)</h1>
       </center>
       <table className="tab ">
         <thead>
@@ -78,40 +75,7 @@ export default function Index() {
         </thead>
         <tbody>
           {list.map((nlist) =>
-            nlist.status === "Completed" ? (
-              // If Completed ------------------------------------------------------
-              <tr className="completed" key={nlist.id}>
-                <td onClick={() => viewPage(nlist)} className="w-75">
-                  {nlist.title}
-                </td>
-                {/* <td className="w-50">{nlist.description}</td> */}
-                {/* <td>{nlist.status}</td> */}
-
-                <td className="">
-                  <button
-                    className="btn btn-warning ms-2 mt-1"
-                    onClick={() => viewPage(nlist)}
-                  >
-                    <i class="bi bi-eye text-dark"></i>
-                  </button>
-                  <button
-                    className="btn btn-primary ms-2 mt-1"
-                    onClick={() => editPage(nlist)}
-                  >
-                    <i className="bi bi-pencil-square"></i>
-                  </button>
-                  <button
-                    className="btn btn-danger ms-2 mt-1"
-                    onClick={() => {
-                      deleteList(nlist.id);
-                    }}
-                  >
-                    <i className="bi bi-trash3-fill"></i>
-                  </button>
-                </td>
-              </tr>
-            ) : (
-              //if Incompleted----------------------------------------------------
+            nlist.important === "Yes" && nlist.status === "Incomplete" ? (
               <tr className="incompleted" key={nlist.id}>
                 <td onClick={() => viewPage(nlist)} className="w-75">
                   {nlist.title}
@@ -142,6 +106,8 @@ export default function Index() {
                   </button>
                 </td>
               </tr>
+            ) : (
+              ""
             )
           )}
         </tbody>

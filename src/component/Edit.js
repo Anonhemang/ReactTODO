@@ -10,6 +10,7 @@ export default function Edit() {
   const [title, setTitle] = useState(nlist.title);
   const [description, setDescription] = useState(nlist.description);
   const [status, setStatus] = useState(nlist.status);
+  const [important, setImportant] = useState(nlist.important);
 
   // Update nlist
   const EditUser = async () => {
@@ -21,6 +22,7 @@ export default function Edit() {
         title,
         description,
         status,
+        important,
       });
       navigate("/Index");
     }
@@ -55,6 +57,14 @@ export default function Edit() {
         >
           <option value="Completed">Completed</option>
           <option value="Incomplete">Incomplete</option>
+        </select>
+        <select
+          className="form-select mt-2 w-75"
+          value={important}
+          onChange={(e) => setImportant(e.target.value)}
+        >
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
         </select>
         <button className="btn btn-primary mt-3" onClick={EditUser}>
           Update

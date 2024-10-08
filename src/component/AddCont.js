@@ -6,6 +6,7 @@ export default function AddCont() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [status, setStatus] = useState("Incomplete");
+  const [important, setImportant] = useState("No");
 
   const addList = async () => {
     if (title && description) {
@@ -13,10 +14,12 @@ export default function AddCont() {
         title,
         description,
         status,
+        important,
       });
       setTitle("");
       setDescription("");
       setStatus("Incomplete");
+      setImportant("No");
       alert("Your List Is Created!");
     } else {
       alert("Please fill all fields!");
@@ -45,6 +48,7 @@ export default function AddCont() {
       {description.split(" ").length} Words, {description.length} Char
       <br />
       <input type="hidden" value={status} />
+      <input type="hidden" value={important} />
       <button className="mt-2 btn btn-success" onClick={addList}>
         Add
       </button>
